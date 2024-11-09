@@ -7,6 +7,11 @@ html, body{
 
 }
 
+.huge-grid{
+    display: flex;
+    flex-direction: column;
+}
+
 .header{
     height: 20vh;
     width: 100vw;
@@ -32,8 +37,9 @@ html, body{
 
 .grid-cards{
     display: grid;
-    grid-template-columns: repeat(autofit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 15px;
+  
 
 }
 
@@ -43,5 +49,23 @@ html, body{
     justify-content: space-around;
     align-items: center;
     flex: 1;
+    border: 2px solid black;
+    color: black;
+    background-color: pink;
 
+}
+
+.read {
+    color: red;
+    font-weight: bold;
+}
+
+.in-progress {
+    color: rgb(233, 201, 18);
+    font-weight: bold;
+}
+
+.unread {
+    color: green;
+    font-weight: bold;
 }
