@@ -1,71 +1,80 @@
 html, body{
     margin: 0;
     padding: 0;
-    font-family: cursive "sans-serif";
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    font-family: cursive Arial, Helvetica, sans-serif;
+    background-color: black;
+}
+:root{
+    --bgColor: linear-gradient(to right, rgb(27, 61, 27) 10%, white 10%);
+    --boRadius: 5%;
 
-
+    --header-bg: linear-gradient(90deg,rgb(10, 82, 55),rgba(1, 14, 13, 0.851));
+    --main-bg: black;
+    --read-status: green;
+    --notRead-status:red;
+    --inProgress-satus:yellow;
 }
 
-.huge-grid{
+.container{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid black;
+    height: 100vh;
+   
 }
-
 .header{
     height: 20vh;
-    width: 100vw;
-    border: 1px dashed black;
-    position: fixed;
+    text-align: center;
+    align-content: center;
+    background: var(--header-bg);
 }
+.container > div{
+    border: 2px solid black;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 25px;
+    align-content:start;
+    height: 75vh;
+    background-color: var(--main-bg);
+}
+.main > div{
+    border: 2px solid black;
+    background: var(--bgColor);
+    border-radius: var(--boRadius);
+    text-align: center;
+
+}
+
 
 #dialog{
-    width: 400px;
-    border-radius: 10%;
+    height: 450px;
+    width: 350px;
+    border-radius: var(--boRadius);
+
 }
 
-.form{
+#form{
     display: flex;
     flex-direction:column;
     justify-content: space-around;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
     flex: 1;
-    height: 100%;
-}
-
-.grid-cards{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 15px;
-  
 
 }
-
-.grid-cards > div{
+.buttons{
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    flex: 1;
-    border: 2px solid black;
-    color: black;
-    background-color: pink;
-
+    gap: 10px;
+    justify-content: center;
+    
 }
-
-.read {
-    color: red;
-    font-weight: bold;
-}
-
-.in-progress {
-    color: rgb(233, 201, 18);
-    font-weight: bold;
-}
-
-.unread {
-    color: green;
-    font-weight: bold;
+button{
+    height: 30px;
+    width: 100px;
+    border-radius: var(--boRadius);
 }
