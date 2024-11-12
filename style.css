@@ -48,6 +48,7 @@ html, body{
     background: var(--bgColor);
     border-radius: var(--boRadius);
     text-align: center;
+    padding: 12px;
 
 }
 

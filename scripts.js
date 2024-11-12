@@ -33,9 +33,34 @@ function addBookToDiv() {
         <p><strong>Title:</strong> ${latestBook.bookName}</p>
         <p><strong>Author:</strong> ${latestBook.author}</p>
         <p><strong>Page Number:</strong> ${latestBook.pageNum}</p>
-        <p><strong>Status:</strong> <span style="background-color: limegreen; text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);"> ${latestBook.status} </span></p>
+       <button class="toggle"> ${latestBook.status}</button>
+       <br> <br>
+       <button class="remove-btn"> Remove Book </button>
+
     `;
+    
 }
+let count=0;
+let statusArr=["Read","Not Read","In Progress"];
+
+main.addEventListener("click", function(e){
+     if(e.target && e.target.classList.contains("remove-btn")){
+        e.target.parentNode.remove();
+     }
+     if (e.target && e.target.classList.contains("toggle")) {
+        // Get the current status in the button's textContent
+        const currentStatus = e.target.textContent;
+
+        // Find the index of the current status in the statusArr
+        let currentIndex = statusArr.indexOf(currentStatus);
+
+        // Cycle to the next status in the array
+        let nextIndex = (currentIndex + 1) % statusArr.length;
+        e.target.textContent = statusArr[nextIndex];
+    }
+
+     
+});
 
 open.addEventListener("click", function() {
     dialog.showModal();
