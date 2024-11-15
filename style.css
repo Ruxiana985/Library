@@ -1,16 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Faculty+Glyphic&family=Pacifico&family=Playpen+Sans:wght@100..800&display=swap');
+
 html, body{
     margin: 0;
     padding: 0;
     font-size: 1.2rem;
-    font-family: cursive Arial, Helvetica, sans-serif;
-    background-color: black;
+    font-family: "Faculty Glyphic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: rgb(250, 244, 244);
+    box-sizing: border-box;
 }
 :root{
-    --bgColor: linear-gradient(to right, rgb(27, 61, 27) 10%, white 10%);
+    --bgColor: linear-gradient(to right, rgb(69, 97, 52) 10%, rgba(164, 185, 172, 0.301) 10% );
     --boRadius: 5%;
 
-    --header-bg: linear-gradient(90deg,rgb(10, 82, 55),rgba(1, 14, 13, 0.851));
-    --main-bg: black;
+
+    --header-bg: linear-gradient(90deg, rgb(148,182,127), rgb(62, 95, 42));
+    --main-bg: white;
     --read-status: green;
     --notRead-status:red;
     --inProgress-satus:yellow;
@@ -30,25 +36,34 @@ html, body{
     align-content: center;
     background: var(--header-bg);
 }
-.container > div{
-    border: 2px solid black;
+
+.every{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
+
 
 .main{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 30px;
-    padding: 25px;
+    padding: 35px;
     align-content:start;
     height: 75vh;
     background-color: var(--main-bg);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),  url('images/DALL·E\ 2024-11-15\ 12.14.23\ -\ A\ seamless\ background\ with\ a\ pure\ white\ base\ and\ subtle\ matcha\ green\ outlines\ of\ books\ arranged\ in\ an\ elegant\ pattern.\ The\ design\ is\ minimalist\,\ with\ .webp');
+    background-attachment: fixed;
+    
 }
+
 .main > div{
-    border: 2px solid black;
+    border: 1px dashed black;
     background: var(--bgColor);
     border-radius: var(--boRadius);
     text-align: center;
     padding: 12px;
+    color: rgb(0, 0, 0);
 
 }
 
@@ -57,6 +72,7 @@ html, body{
     height: 450px;
     width: 350px;
     border-radius: var(--boRadius);
+    background-color:  rgb(187, 218, 168);
 
 }
 
@@ -65,7 +81,7 @@ html, body{
     flex-direction:column;
     justify-content: space-around;
     flex: 1;
-    gap: 15px;
+    gap: 25px;
 
 }
 .buttons{
@@ -74,8 +90,28 @@ html, body{
     justify-content: center;
     
 }
-button{
-    height: 30px;
-    width: 100px;
-    border-radius: var(--boRadius);
+.btn{
+    height: 40px;
+    width: 150px;
 }
+#addBook{
+    height: 50px;
+    width: 250px;
+}
+
+.btn, #addBook{
+    border-radius: var(--boRadius);
+    background-color: rgba(0, 0, 0, 0.781);
+    color: white;
+    font-size: 1rem;
+    border-radius: 10px;
+    box-shadow: 2px 5px 4px grey;
+}
+
+input,select{
+    height: 30px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px ridge black;
+}
+

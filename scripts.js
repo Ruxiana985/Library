@@ -19,7 +19,8 @@ function Books(bookName, author, pageNum, status) {
 let bArr = [];
 
 function addBookToArray(event) {
-    event.preventDefault(); // Prevent form from refreshing the page
+    event.preventDefault();
+    
     const book = new Books(bookName.value, author.value, pageNum.value, status.value);
     bArr.push(book);
 }
@@ -33,9 +34,9 @@ function addBookToDiv() {
         <p><strong>Title:</strong> ${latestBook.bookName}</p>
         <p><strong>Author:</strong> ${latestBook.author}</p>
         <p><strong>Page Number:</strong> ${latestBook.pageNum}</p>
-       <button class="toggle"> ${latestBook.status}</button>
+       <button class="btn toggle"> ${latestBook.status}</button>
        <br> <br>
-       <button class="remove-btn"> Remove Book </button>
+       <button class="btn remove-btn"> Remove Book </button>
 
     `;
     
@@ -72,6 +73,12 @@ close.addEventListener('click', function(event) {
 });
 
 add.addEventListener("click", function(event) {
+    
+    if (bookName.value === "" || author.value === "" || pageNum.value === "" || status.value === "") {
+        alert("All fields must be filled out.");
+        return;
+       
+    }
     addBookToArray(event);
     addBookToDiv();
     dialog.close();
